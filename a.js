@@ -435,6 +435,9 @@ setTimeout(function () {
                 }
         
         }); 
+
+
+    console.log("Frida version:", Frida.version);
         
     }
 
