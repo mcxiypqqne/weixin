@@ -274,15 +274,15 @@ Interceptor.attach(Module.getGlobalExportByName('android_dlopen_ext'), {
  
 
 
-
+ console.log("qqqqqqqqqqqqqqqqqqqq")
 
 if( this.targetSo2 ==true){
         var moduleBase = Process.findModuleByName("libMMProtocalJni.so");
     
         Interceptor.attach(moduleBase.base.add(0x65F28 ), {
             onEnter: function(args) {
-                log("qqqqqqqqqqqqqqqqqqqq")
-                logRaw(toHexString(this.context.x1,   this.context.x2.toInt32()));
+                  console.log("qqqqqqqqqqqqqqqqqqqq")
+                  console.log(toHexString(this.context.x1,   this.context.x2.toInt32()));
               
              
                 }
@@ -290,8 +290,8 @@ if( this.targetSo2 ==true){
         }); 
         Interceptor.attach(moduleBase.base.add(0x065F64), {
             onEnter: function(args) {
-                log("qqqqqqqqqqqqqqqqqqqq")
-                logRaw(toHexString(this.context.x1,   this.context.x2.toInt32()));
+                  console.log("qqqqqqqqqqqqqqqqqqqq")
+                  console.log(toHexString(this.context.x1,   this.context.x2.toInt32()));
       
              
                 }
