@@ -274,7 +274,6 @@ Interceptor.attach(Module.getGlobalExportByName('android_dlopen_ext'), {
  
 
 
- console.log("qqqqqqqqqqqqqqqqqqqq")
 
 if( this.targetSo2 ==true){
         var moduleBase = Process.findModuleByName("libMMProtocalJni.so");
@@ -406,39 +405,6 @@ setTimeout(function () {
             return result;
     };
     })
-  var moduleBase = Process.findModuleByName("libMMProtocalJni.so");
-    
-    Interceptor.attach(moduleBase.base.add(0x65F28 ), {
-            onEnter: function(args) {
-                  console.log("qqqqqqqqqqqqqqqqqqqq")
-                  console.log(toHexString(this.context.x1,   this.context.x2.toInt32()));
-              
-             
-                }
-        
-        }); 
-        Interceptor.attach(moduleBase.base.add(0x065F64), {
-            onEnter: function(args) {
-                  console.log("qqqqqqqqqqqqqqqqqqqq")
-                  console.log(toHexString(this.context.x1,   this.context.x2.toInt32()));
-      
-             
-                }
-        
-        }); 
-        Interceptor.attach(moduleBase.base.add(0x07B548 ), {
-            onEnter: function(args) {
-                log("qqqqqqqqqqqqqqqqqqqq1")
-                logRaw(toHexString(this.context.x1,   this.context.x2.toInt32()));
-      
-             
-                }
-        
-        }); 
 
-
-    console.log("Frida version:", Frida.version);
-        
-    }
 
 }, 1000);
